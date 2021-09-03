@@ -3,4 +3,4 @@ install:
 language: python
 python: "3.8"
 scripts: 
-  - "pytest --flake8 --ignore=W191,E501"
+  - "pytest --flake8 --ignore W191,E501"
