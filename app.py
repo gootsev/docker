@@ -7,8 +7,6 @@ name = os.environ['NAME']
 city = os.environ['CITY']
 api = os.environ['API_KEY']
 
-
-
 @app.route('/')
 def main_app():
 	params = {'q': {city}, 'appid': {api}}
@@ -32,7 +30,6 @@ def db_connect(temp):
 		if(connection):
 			cursor.close()
 			connection.close()
-        
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', debug=True)
