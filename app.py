@@ -1,11 +1,14 @@
 from flask import Flask
-import requests, json, os, psycopg2
+import requests
+import os
+import psycopg2
 
 app = Flask(__name__)
 
 name = os.environ['NAME']
 city = os.environ['CITY']
 api = os.environ['API_KEY']
+
 
 @app.route('/')
 def main_app():
@@ -15,6 +18,7 @@ def main_app():
 	temp = request.json()['main']['temp']
 	db_connect(temp)
 	return f"Hi {name}! It's {temp} degrees in {city} now, {description}."
+
 
 def db_connect(temp):
 	connection = psycopg2.connect(user='postgres', password='postgres', database='postgres', host="db")
@@ -30,6 +34,7 @@ def db_connect(temp):
 		if(connection):
 			cursor.close()
 			connection.close()
+
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', debug=True)
