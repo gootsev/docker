@@ -12,4 +12,4 @@ Enter command:
 Doker-compose added.
 Please, use your own API_KEY and another environment parameters. You can change them if file .env
 
-test_new
+test 2
