@@ -7,5 +7,5 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 COPY ./app.py /app/
 
-EXPOSE 5000
+EXPOSE 80
 ENTRYPOINT ["python3", "/app/app.py"]
